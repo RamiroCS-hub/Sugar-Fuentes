@@ -3,9 +3,8 @@ plugins{
     id 'kotlin-android'
     id 'kotlin-kapt'
     id 'kotlin-android-extensions'
+    //id 'com.appspector.sdk'
 }
-
-//apply plugin: 'com.appspector.sdk'
 
 
 android {
@@ -51,7 +50,8 @@ android {
 }
 
 repositories {
-    jcenter()
+    //maven { url "https://maven.appspector.com/artifactory/android-sdk" }
+    jcenter() // Para la Mask
 }
 
 
@@ -160,6 +160,7 @@ dependencies {
     implementation 'com.daimajia.androidanimations:library:2.3@aar'
 
     //implementation "com.appspector:android-sdk:1.2.1"
+    //implementation "com.appspector:android-sdk:1.+"
 
 
     implementation "com.github.IslamKhSh:CardSlider:$rootProject.carouselVersion"
