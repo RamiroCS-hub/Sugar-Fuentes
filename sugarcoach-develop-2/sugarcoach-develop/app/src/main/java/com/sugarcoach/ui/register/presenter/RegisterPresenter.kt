@@ -519,8 +519,8 @@ class RegisterPresenter<V : RegisterView, I : RegisterInteractorImp> @Inject int
         choosePhotoHelper = ChoosePhotoHelper.with(context)
             .asFilePath()
             .build(ChoosePhotoCallback {
-                photo = it
-                getView()?.setImage(it)
+                photo = it!!
+                getView()?.setImage(it!!)
             })
     }
 

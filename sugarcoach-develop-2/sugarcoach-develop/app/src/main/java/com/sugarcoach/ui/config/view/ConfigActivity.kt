@@ -46,6 +46,7 @@ import androidmads.library.qrgenearator.QRGEncoder
 import androidx.core.app.ComponentActivity.ExtraData
 import androidx.core.content.ContextCompat.getSystemService
 import android.icu.lang.UCharacter.GraphemeClusterBreak.T
+import android.os.Build
 import android.os.Environment
 import android.text.TextWatcher
 import android.view.WindowManager
@@ -198,7 +199,7 @@ class ConfigActivity: BaseActivity(), ConfigView {
     private fun setOnClickListeners() {
         config_number.setOnEditorActionListener { v, actionId, event ->
             if (actionId == EditorInfo.IME_ACTION_DONE){
-                presenter.updateNumber(config_number.rawText)
+                presenter.updateNumber(config_number.text.toString())
             }
             false
         }
@@ -334,7 +335,7 @@ class ConfigActivity: BaseActivity(), ConfigView {
         dialog.setMessage(msg)
             .setPositiveButton(getString(R.string.daily_detail_accept)) { paramDialogInterface, paramInt ->
                 var intent: Intent
-                if (android.os.Build.VERSION.SDK_INT >= 9) {
+                if (Build.VERSION.SDK_INT >= 9) {
                     /* on 2.3 and newer, use APPLICATION_DETAILS_SETTINGS with proper URI */
                     var packageURI = Uri.parse("package:" + packageName);
                     intent = Intent("android.settings.APPLICATION_DETAILS_SETTINGS", packageURI);

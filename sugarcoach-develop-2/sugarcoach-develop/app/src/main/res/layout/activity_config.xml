@@ -232,11 +232,10 @@
                 <FrameLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
-                    <!--<br.com.sapereaude.maskedEditText.MaskedEditText
+                    <com.vicmikhailau.maskededittext.MaskedEditText
                             android:gravity="center|center_vertical"
                             android:background="@drawable/border_aqua"
                             android:inputType="phone"
-                            mask:allowed_chars="1234567890"
                             mask:mask="+## (###) ####-##-##"
                             android:textSize="15dp"
                             android:hint="0123456789012"
@@ -251,7 +250,7 @@
                             android:visibility="visible"
                             android:layout_width="match_parent"
                             android:layout_height="61dp"
-                    />-->
+                    />
                     <androidx.appcompat.widget.AppCompatImageView
                             android:layout_width="25dp"
                             android:layout_gravity="left"
